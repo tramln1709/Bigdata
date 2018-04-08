@@ -1,0 +1,95 @@
+Input split 0 : [apple lemon mango salmon wheat apple]
+Input split 1 :[barley salmon apple orange carrot rice]
+ Input split 2: [mango carrot lemon apple rice tuna]
+ 
+Mapper output 0
+
+(apple, 2)
+(lemon, 1)
+(salmon, 1)
+(wheat, 1)
+(mango, 1)
+
+Mapper output 1
+
+(orange, 1)
+(apple, 1)
+(salmon, 1)
+(barley, 1)
+(rice, 1)
+(carrot, 1)
+
+Mapper output 2
+
+(apple, 1)
+(tuna, 1)
+(lemon, 1)
+(rice, 1)
+(mango, 1)
+(carrot, 1)
+
+Pairs send from Mapper 0 Reduce 0
+(apple, 2)
+Pairs send from Mapper 0 Reduce 1
+(lemon, 1)
+(mango, 1)
+Pairs send from Mapper 0 Reduce 2
+(salmon, 1)
+(wheat, 1)
+Pairs send from Mapper 1 Reduce 0
+(apple, 1)
+(barley, 1)
+(carrot, 1)
+Pairs send from Mapper 1 Reduce 1
+(orange, 1)
+Pairs send from Mapper 1 Reduce 2
+(salmon, 1)
+(rice, 1)
+Pairs send from Mapper 2 Reduce 0
+(apple, 1)
+(carrot, 1)
+Pairs send from Mapper 2 Reduce 1
+(lemon, 1)
+(mango, 1)
+Pairs send from Mapper 2 Reduce 2
+(tuna, 1)
+(rice, 1)
+
+=====Reducer 0 Input===
+
+<apple, [2, 1, 1]>
+<barley, [1]>
+<carrot, [1, 1]>
+
+=====Reducer 1 Input===
+
+<lemon, [1, 1]>
+<mango, [1, 1]>
+<orange, [1]>
+
+=====Reducer 2 Input===
+
+<rice, [1, 1]>
+<salmon, [1, 1]>
+<tuna, [1]>
+<wheat, [1]>
+
+=====Reducer 0 Output===
+
+<apple, 4>
+<barley, 1>
+<carrot, 2>
+
+=====Reducer 1 Output===
+
+<lemon, 2>
+<mango, 2>
+<orange, 1>
+
+=====Reducer 2 Output===
+
+<rice, 2>
+<salmon, 2>
+<tuna, 1>
+<wheat, 1>
+
